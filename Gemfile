@@ -4,16 +4,24 @@ gem 'rails', '3.2.3'
 
 gem 'pg'
 
+gem 'omniauth-twitter'
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
-
+  gem 'bootstrap-sass', '~> 2.2.2.0'
+  
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', :platform => :ruby
 
   gem 'uglifier', '>= 1.0.3'
+end
+
+group :development do
+  gem 'binding_of_caller', '0.6.7'
+  gem "better_errors", '0.3.0'
 end
 
 gem 'jquery-rails'
