@@ -1,4 +1,4 @@
-Twilater2::Application.routes.draw do
+Twilater::Application.routes.draw do
   
   # Omniauth routes for login/logout
   match "/auth/:provider/callback" => "sessions#create"

@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Twilater2::Application.load_tasks
+Twilater::Application.load_tasks
