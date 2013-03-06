@@ -3,10 +3,12 @@ Funcionalidades a implementar
 USUARIO
   - Login con cuenta de twitter <== OK
     - Recuperar tweets favoritos
+    - Escanar tweets para recuperara contenido de los enlaces
+
   - Listar tweets
-    - Paginado 
+    - Paginado
     - Almacenar el contenido de las páginas enlazadas en los tweets
   - Buscar en texto del tweet, enlace y contenido del enlace
 
 APLICACION
-  - Alamcenar contenido de una url ¿bajo demanda o automáticamente?
+  - Alamcenar contenido de una url automáticamente
