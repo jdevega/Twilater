@@ -36,8 +36,8 @@ ActiveRecord::Schema.define(:version => 20130307145012) do
   end
 
   create_table "tweets", :force => true do |t|
-    t.integer  "tweet_id"
-    t.integer  "user_id"
+    t.string   "tweet_id"
+    t.integer  "account_id"
     t.hstore   "urls"
     t.datetime "created_at"
   end
