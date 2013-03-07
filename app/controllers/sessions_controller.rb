@@ -4,6 +4,9 @@ class SessionsController < ApplicationController
     user = User.find_by_provider_and_uid(auth["provider"], auth["uid"]) || User.create_with_omniauth(auth)
     user.update_attributes({oauth_token: auth.credentials.token, oauth_token_secret: auth.credentials.secret})
     session[:user_id] = user.id
+
+    #TODO: Una vez el usuario se ha validado hay que recuperar sus tweets nuevos.
+
     redirect_to root_url, :notice => "Signed in!"
   end
 

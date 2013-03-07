@@ -1,8 +1,9 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.3'
-
+gem 'rack', '1.4.1'
 gem 'pg'
+gem 'activerecord-postgres-hstore'
 
 gem 'omniauth-twitter'
 gem 'twitter'
