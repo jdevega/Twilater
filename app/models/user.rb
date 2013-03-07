@@ -24,6 +24,6 @@ class User < ActiveRecord::Base
   end
 
   def favourites
-    accounts.map {|account| account.favourites }.flatten
+    accounts.each{|account| TweetWorker.perform_async(account.id) }
   end
 end
