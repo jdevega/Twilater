@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
 
     #TODO: Una vez el usuario se ha validado hay que recuperar sus tweets nuevos para cada cuenta.
 
-    redirect_to root_url, :notice => "Signed in!"
+    redirect_to home_url, :notice => "Signed in!"
   end
 
   def destroy

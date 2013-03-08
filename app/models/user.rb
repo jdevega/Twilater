@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
   has_many  :tweets, :through => :accounts
   has_many  :pages, :through => :tweets
   has_one   :main_account, :class_name => 'Account', :conditions => { :main => true }
+  
 
   def self.create_with_omniauth(auth)
     create! do |user|
@@ -24,6 +25,12 @@ class User < ActiveRecord::Base
   end
 
   def favourites
-    accounts.each{|account| TweetWorker.perform_async(account.id) }
+    accounts.each do |account| 
+      TweetWorker.perform_async(account.id)
+    end
+  end
+
+  def last_tweet
+    tweets.order('created_at DESC').first
   end
 end

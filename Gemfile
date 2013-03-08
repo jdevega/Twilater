@@ -7,8 +7,13 @@ gem 'activerecord-postgres-hstore'
 
 gem 'omniauth-twitter'
 gem 'twitter'
+
 gem 'nokogiri'
+gem "ruby-readability", :require => 'readability'
+
 gem 'sidekiq'
+gem 'slim'
+gem 'sinatra', '>= 1.3.0', :require => nil
 
 gem 'thin'
 gem 'foreman'

@@ -1,8 +1,14 @@
 Twilater::Application.routes.draw do
-  
+  require 'sidekiq/web'
+
   # Omniauth routes for login/logout
   match "/auth/:provider/callback" => "sessions#create"
   match "/signout" => "sessions#destroy", :as => :signout
+
+  match "/home" => "user#index", :as => :home
+  match "/look_for_new_tweets" => "user#look_for_new_tweets", :as => :look_for_new_tweets, :via => :get
+
+  mount Sidekiq::Web => '/sidekiq'
   
   # The priority is based upon order of creation:
   # first created -> highest priority.
