@@ -13,5 +13,5 @@ class Page < ActiveRecord::Base
       :content => 'C'
     }
   
-  scope :visible, where(:state => [STATE_NEW, STATE_SAVED]).order('created_at DESC')
+  scope :visibles, where(:state => [STATE_NEW, STATE_SAVED]).order('created_at ASC')
 end
