@@ -5,7 +5,8 @@ class Account < ActiveRecord::Base
 
   validates :uid, :uniqueness => {:scope => :provider}
 
-  has_many :tweets 
+  has_many :tweets
+  belongs_to :user
 
   def client 
     @client || @client = Twitter::Client.new(oauth_token: oauth_token, oauth_token_secret: oauth_token_secret) 

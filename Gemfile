@@ -4,12 +4,14 @@ gem 'rails', '3.2.3'
 gem 'rack', '1.4.1'
 gem 'pg'
 gem 'activerecord-postgres-hstore'
+gem 'pg_search'
 
 gem 'omniauth-twitter'
 gem 'twitter'
 
 gem 'nokogiri'
-gem "ruby-readability", :require => 'readability'
+gem 'ruby-readability', :require => 'readability'
+gem 'fastimage'
 
 gem 'sidekiq'
 gem 'slim'
@@ -33,7 +35,7 @@ end
 
 group :development do
   gem 'binding_of_caller', '0.6.7'
-  gem "better_errors", '0.3.0'
+  gem 'better_errors', '0.3.0'
 end
 
 gem 'jquery-rails'

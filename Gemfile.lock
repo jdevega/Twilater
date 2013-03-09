@@ -61,6 +61,7 @@ GEM
     facter (1.6.17)
     faraday (0.8.6)
       multipart-post (~> 1.1)
+    fastimage (1.2.14)
     foreman (0.61.0)
       thor (>= 0.13.6)
     guess_html_encoding (0.0.9)
@@ -92,6 +93,9 @@ GEM
       omniauth-oauth (~> 1.0)
     pg (0.14.1)
     pg-hstore (1.1.7)
+    pg_search (0.5.7)
+      activerecord (>= 3)
+      activesupport (>= 3)
     polyglot (0.3.3)
     rack (1.4.1)
     rack-cache (1.2)
@@ -179,11 +183,13 @@ DEPENDENCIES
   binding_of_caller (= 0.6.7)
   bootstrap-sass (~> 2.2.2.0)
   coffee-rails (~> 3.2.1)
+  fastimage
   foreman
   jquery-rails
   nokogiri
   omniauth-twitter
   pg
+  pg_search
   rack (= 1.4.1)
   rails (= 3.2.3)
   ruby-readability

@@ -1,5 +1,8 @@
 <% if current_user %>
-  Welcome <%= current_user.name %>! <%= avatar_for(current_user) %> <%= link_to "Sign Out", signout_path, id: "signout" %>
+  <form method="get" action="/search" class="navbar-search">
+    <input type="text" id="text" name="text" class="search-query" placeholder="Search ...">
+  </form>
+  <%= current_user.name %> ! <%= avatar_for(current_user) %> <%= link_to "Sign Out", signout_path, id: "signout" %>
 <% else %>
   <%= link_to "Sign in with Twitter", "/auth/twitter" %>
 <% end %>

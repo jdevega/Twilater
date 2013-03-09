@@ -1,4 +1,5 @@
 class SessionsController < ApplicationController
+  
   def create
     auth    = request.env["omniauth.auth"]
     
@@ -9,6 +10,7 @@ class SessionsController < ApplicationController
     session[:account_id]  = account.id
 
     #TODO: Una vez el usuario se ha validado hay que recuperar sus tweets nuevos para cada cuenta.
+    account.user.favourites
 
     redirect_to home_url, :notice => "Signed in!"
   end
