@@ -14,4 +14,14 @@ class Page < ActiveRecord::Base
     }
   
   scope :visibles, where(:state => [STATE_NEW, STATE_SAVED]).order('created_at ASC')
+  scope :next, lambda { |id| where("id > ?",id).order("id ASC") }
+  scope :previous, lambda { |id| where("id < ?",id).order("id DESC") }
+
+  def next
+    Page.next(id).first
+  end
+
+  def previous
+    Page.previous(id).first
+  end
 end

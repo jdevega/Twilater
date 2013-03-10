@@ -12,4 +12,8 @@ class ApplicationController < ActionController::Base
   def current_accounts
   	current_user.accounts if current_user
   end
+
+  def user_must_be_logged
+    redirect_to root_url, :alert => "User must be logged!" unless current_user 
+  end
 end

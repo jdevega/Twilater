@@ -1,0 +1,16 @@
+<div class="container-fluid offset1">
+  <div class="row-fluid">
+    <div class="span2 text-left">
+      <%= link_to_previous_page_for @page %>
+    </div>
+    <div class="span7">
+
+    </div>
+    <div class="span2 text-right">
+      <%= link_to_next_page_for @page %>
+    </div>
+  </div>
+  <div class="row-fluid">
+    <%= render @page %>
+  </div>
+</div>

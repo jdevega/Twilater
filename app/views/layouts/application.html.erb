@@ -19,7 +19,7 @@
       <a class="brand" href="#">Twilater</a>
       <div class="nav-collapse collapse">
         <ul class="nav" id="main-menu-left">
-          <li class="active"><a href="#">Home</a></li>
+          <li class="active"><%= link_to "Pages", home_path %></li>
           <li><a href="#about">About</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
@@ -32,6 +32,9 @@
   </div>
 </div>
 <div class="container-fluid">
+  <header>
+    <%= render 'layouts/messages' %>
+  </header>
 <%= yield %>
 </div>
 </body>
