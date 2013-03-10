@@ -7,6 +7,7 @@ class Page < ActiveRecord::Base
 
   attr_accessible :content, :media, :title, :tweet_id, :url, :state
   belongs_to :tweet
+  # has_one :user, :throuhg => :tweet
 
   pg_search_scope :search_full_text, :against => {
       :title => 'A',
@@ -14,14 +15,16 @@ class Page < ActiveRecord::Base
     }
   
   scope :visibles, where(:state => [STATE_NEW, STATE_SAVED]).order('created_at ASC')
-  scope :next, lambda { |id| where("id > ?",id).order("id ASC") }
-  scope :previous, lambda { |id| where("id < ?",id).order("id DESC") }
+  scope :next, lambda { |id, user_id| where("id > ? ",id).order("id ASC") }
+  scope :previous, lambda { |id, user_id| where("id < ? ",id).order("id DESC") }
 
   def next
     Page.next(id).first
+    #Page.next(id, user.id).first
   end
 
   def previous
     Page.previous(id).first
+    #Page.previous(id, user.id).first
   end
 end
