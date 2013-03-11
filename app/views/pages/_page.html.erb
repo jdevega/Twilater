@@ -4,8 +4,8 @@
       <%= image_tag(page.media ? page.media : 'no-page-image.jpg') %>
     </div>
     <div class="span10">
-      <%= content_tag :h1, page.title %>
-      <%= link_to_page page%>
+      <%= content_tag :h1, link_to(page.title, page) %>
+      <%= link_to_page page, :class => "url" %>
     </div>
   </div>
 	<div class="row-fluid content">

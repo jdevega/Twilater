@@ -3,21 +3,22 @@ class PagesController < ApplicationController
 
   def index
     @page = params[:id] ? Page.find(params[:id]) : current_user.pages.visibles.last 
+    @readed = @page.readed?
   end
 
   def search
     @pages = current_user.pages.visibles.search_full_text(params[:text].to_s)
   end
 
-  def previous
+  def read
     page = Page.find(params[:id])
-    @page = page.previous
-    render :index
+    page.mark_as_readed
+    render :json => {status: "readed"}
   end
 
-  def next
+  def delete
     page = Page.find(params[:id])
-    @page = page.next
-    render :index
+    page.mark_as_deleted
+    render :json => {status: "deleted"}
   end
 end

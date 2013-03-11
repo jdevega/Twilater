@@ -1,0 +1,2 @@
+<button class="btn btn-mini btn-warning" id="read" data-href="<%= read_page_path(@page) %>"  <%= "disabled" if @readed %>><%= @readed ? "Readed" : "Read" %></button>
+<button class="btn btn-mini btn-danger" id="delete" data-href="<%= delete_page_path(@page) %>">Delete</button>

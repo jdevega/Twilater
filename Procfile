@@ -1,2 +1,2 @@
-web: bundle exec rails s
-sidekiq: bundle exec sidekiq
+web: bundle exec rails s -p 3001
+sidekiq: bundle exec sidekiq -c 10
