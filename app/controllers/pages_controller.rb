@@ -2,8 +2,8 @@ class PagesController < ApplicationController
   
 
   def index
-    @page = params[:id] ? Page.find(params[:id]) : current_user.pages.visibles.last 
-    @readed = @page.readed?
+    @page = params[:id] ? Page.find(params[:id]) : current_user.pages.visibles.first 
+    @readed = @page.readed? if @page
   end
 
   def search

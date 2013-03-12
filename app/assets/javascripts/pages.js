@@ -1,5 +1,5 @@
 $(document).ready(function(){
-  $("#read,#delete",".page").on("click", function(e){
+  $("#read,#delete",".pages").on("click", function(e){
     e.preventDefault();
     var url = $(this).attr("data-href");
 

@@ -6,6 +6,7 @@ class Tweet < ActiveRecord::Base
 
   has_many :pages
   belongs_to :account
+  validates :tweet_id, :uniqueness => true
 
   after_create :create_pages
 
