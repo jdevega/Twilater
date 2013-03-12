@@ -7,7 +7,7 @@ class TweetWorker
   def perform(account_id)
     account = Account.find(account_id)
     if account
-		  	account.client.favourites(:since_id => account.last_tweet_id ,:count => TWEETS_PER_REQUEST).each do |tweet|
+		  	account.client.favourites(:count => TWEETS_PER_REQUEST).each do |tweet|
 		    tweet_urls = {}
 		    urls_from(tweet.text).each_with_index{ |url,index| tweet_urls[index] = url }
 		    urls       = tweet_urls

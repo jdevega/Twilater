@@ -11,6 +11,9 @@ Twilater::Application.routes.draw do
   match "/page/:id/read"      => "pages#read",    :as => :read_page
   match "/page/:id/delete"    => "pages#delete",  :as => :delete_page
 
+  match "/look_for_new_pages"   => "user#look_for_new_pages"
+  match "/look_for_new_tweets"  => "user#look_for_new_tweets"
+
   mount Sidekiq::Web => '/sidekiq'
   
   root :to => 'static#index'

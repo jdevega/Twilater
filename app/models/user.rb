@@ -33,4 +33,8 @@ class User < ActiveRecord::Base
   def last_tweet
     tweets.order('created_at DESC').first
   end
+
+  def new_pages
+    pages.where(:state => Page::STATE_NEW)
+  end
 end

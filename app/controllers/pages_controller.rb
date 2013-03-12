@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  before_filter :user_must_be_logged
+  
 
   def index
     @page = params[:id] ? Page.find(params[:id]) : current_user.pages.visibles.last 

@@ -1,6 +1,8 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
 
+  before_filter :user_must_be_logged
+
   helper_method :current_user
   helper_method :current_accounts
   private

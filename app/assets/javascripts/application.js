@@ -14,3 +14,28 @@
 //= require jquery_ujs
 //= require bootstrap
 //= require_tree .
+
+
+
+function look_for_new_pages() {
+  
+  $.get("/look_for_new_pages")
+    .done(function(data){
+      if (data.pages != undefined){
+        $("#newPages").text(data.pages.length);
+      }
+    });
+  
+}
+
+function look_for_new_tweets() {
+  
+  $.post("/look_for_new_tweets");
+  
+}
+
+
+var lookForNewTweetsTimerId = setInterval(look_for_new_tweets, 120000);
+var lookForNewPagesTimerId  = setInterval(look_for_new_pages, 30000);
+
+look_for_new_pages();

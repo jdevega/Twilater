@@ -1,8 +1,10 @@
 <% if current_user %>
-  <form method="get" action="/search" class="navbar-search">
-    <input type="text" id="text" name="text" class="search-query" placeholder="Search ...">
-  </form>
-  <%= current_user.name %> ! <%= avatar_for(current_user) %> <%= link_to "Sign Out", signout_path, id: "signout" %>
+  <%= form_tag search_path, :method => :post, :class => 'navbar-search' do %>
+    <%= text_field_tag :text, nil, :class => 'search-query', :placeholder => 'Search ...' %>
+  <% end %>
+  <%= avatar_for(current_user) %>
+  <div id="newPages" class="badge badge-info"></div>
+  <%= link_to "Sign Out", signout_path, id: "signout" %>
 <% else %>
   <%= link_to "Sign in with Twitter", "/auth/twitter" %>
 <% end %>

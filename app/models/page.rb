@@ -14,7 +14,7 @@ class Page < ActiveRecord::Base
       :content => 'C'
     }
   
-  scope :visibles, where(:state => [STATE_NEW])
+  scope :visibles, where(:state => [STATE_NEW, STATE_READED])
   scope :next, lambda { |id, user_id| joins(:account).where("pages.id > ? and accounts.user_id = ?",id,user_id).order("id ASC") }
   scope :previous, lambda { |id, user_id| joins(:account).where("pages.id < ? and accounts.user_id = ?",id,user_id).order("id DESC") }
 
