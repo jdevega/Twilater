@@ -6,6 +6,10 @@ class PagesController < ApplicationController
     @readed = @page.readed? if @page
   end
 
+  def dashboard
+    @pages = current_user.pages.visibles
+  end
+
   def search
     @pages = current_user.pages.visibles.search_full_text(params[:text].to_s)
   end

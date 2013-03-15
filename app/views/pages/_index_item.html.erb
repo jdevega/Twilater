@@ -1,0 +1,5 @@
+<div>
+<div class="title"><%= truncate index_item.title, :omission => ' ...', :length => 60 %></div>
+<div class="date"><%= I18n.l index_item.tweet.created_at, :format => :short %></div>
+<div class="excerpt"><%= truncate(strip_tags(index_item.content), :omission => ' ...', :length => 150) %></div>
+</div>

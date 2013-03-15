@@ -1,0 +1,10 @@
+<div class="container-fluid offset1 pages">
+  <div class="row-fluid">
+    <div class="span4 index">
+      <%= render :partial => 'index', :locals => { :items => @pages } %>
+    </div>
+    <div class="span7 preview">
+      <%= render :partial => 'page' , :locals => { :page => @pages.first } %>
+    </div>
+  </div>
+</div>
